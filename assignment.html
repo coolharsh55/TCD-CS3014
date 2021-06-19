@@ -1,0 +1,324 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>CS3014 - Concurrent Systems I</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
+    </head>
+    <body>
+        <div class="mw8 center">
+            <h1 id="cs3014-assignment">
+                CS3014 Assignment
+            </h1>
+            <p>
+            The assignment is
+            <em>
+                simple
+            </em>
+            .
+            <br/>
+            Implement 1 searching algorithm and 1 sorting algorithm in non-parallel and parallel execution formats, and compare them.
+            <br/>
+            Write a report on your findings.
+            </p>
+            <p>
+            Submission date:
+            <code>
+                FRIDAY 23:59 16 March 2018 UTC
+            </code>
+            .
+            </p>
+            <p>
+            How to submit: use blackboard, upload as many times as you want
+            </p>
+            <h2 id="selecting-algorithms">
+                Selecting Algorithms
+            </h2>
+            <p>
+            You must explain the reason why you selected a particular algorithm.
+            <br/>
+            You can either choose an algorithm to demonstrate that:
+            </p>
+            <ul>
+                <li>
+                    it is NOT parallelisable in an efficient way
+                </li>
+                <li>
+                    <strong>
+                        or,
+                    </strong>
+                    you can improve its performance by parallelising it.
+                </li>
+            </ul>
+            <p>
+            Both approaches must be proved using code and performance metrics.
+            </p>
+            <p>
+            Algorithms must be run on
+            <code>
+                size &gt;= 100000
+            </code>
+            items.
+            </p>
+            <p>
+            You may select any sorting algorithm and any searching algorithm of the following:
+            </p>
+            <h3 id="searching-algorithms">
+                searching algorithms
+            </h3>
+            <ul>
+                <li>
+                    linear search
+                </li>
+                <li>
+                    k^th selection
+                </li>
+                <li>
+                    binary search
+                </li>
+                <li>
+                    fibonacci search
+                </li>
+                <li>
+                    hash table (search)
+                </li>
+            </ul>
+            <h3 id="sorting-algorithms">
+                sorting algorithms
+            </h3>
+            <ul>
+                <li>
+                    cocktail sort
+                </li>
+                <li>
+                    insertion sort
+                </li>
+                <li>
+                    shell sort
+                </li>
+                <li>
+                    quicksort
+                </li>
+                <li>
+                    mergesort
+                </li>
+                <li>
+                    heapsort
+                </li>
+            </ul>
+            <h2 id="report">
+                Report
+            </h2>
+            <ul>
+                <li>
+                    <strong>
+                        MAXIMUM 5 pages
+                    </strong>
+                </li>
+                <li>
+                    Must have two parts - searching &amp; sorting
+                </li>
+                <li>
+                    Each part must have the following explanations:
+                    <ul>
+                        <li>
+                            why was the algorithm chosen?
+                        </li>
+                        <li>
+                            what is its time complexity?
+                        </li>
+                        <li>
+                            what strategies did you apply when parallelising it?
+                        </li>
+                        <li>
+                            compare performance of serial vs parallel implementations
+                        </li>
+                        <li>
+                            assumption on number of CPU cores and threads
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    There must be no code in the report. You may use snippets for explanation, but snippets may not be longer than 3 lines. Essentially, your report must not be full of code.
+                </li>
+                <li>
+                    You must describe the execution environment you chose in the code (how many processes? how many threads?)
+                </li>
+                <li>
+                    You must describe the
+                    <em>
+                        physical
+                    </em>
+                    environment of your test machine (What CPUs? How many cores? Hyperthreading? How much cache? How much RAM?)
+                </li>
+                <li>
+                    You must mention the version of compiler, C/C++ library, OS, etc.
+                </li>
+                <li>
+                    You must test your code with different parameters (thread count, for loop count, etc.) - you must explain what effect this has on the code.
+                </li>
+            </ul>
+            <h2 id="code">
+                Code
+            </h2>
+            <ul>
+                <li class="b u">NOTE: These instructions have been changed</li>
+                <li>You must submit all related code (source files only, no binaries) as part of your submission as an archive file (zip or tar/tar-gz)</li>
+                <li>For additional references to code not part of the assignment, you may use any form of code hosting as long as it is accessible without restrictions. Github, Gitlab, Bitbucket, Pastebucket is OKAY to use.</li>
+                <li>
+                    Each approach should have its own file - therefore, at minimum, you will have four files
+                    <code>
+                        {serial, parallel} x {searching, sorting}
+                    </code>
+                </li>
+                <li>You can create a Makefile for executing your code with the following structure:
+                    <ul>
+                        <li>clean: deletes all runtimes and programs</li>
+                        <li>searchserial: compiles the serial searching code</li>
+                        <li>searchparallel: compiles the parallel searching code</li>
+                        <li>sortserial: compiles the serial sorting code</li>
+                        <li>sortparallel: compiles the parallel sorting code</li>
+                        <li>runserialsearch: run the serial search program</li>
+                        <li>runparallelsearch: run the parallel search program</li>
+                        <li>runserialsort: run the serial sort program</li>
+                        <li>runparallelsort: run the parallel sort program</li>
+                        <li>This is optional (but highly recommended)</li>
+                    </ul>
+                </li>
+                <li>
+                    Your code must be documented. Do not put obvious comments. Do not repeat things that are in the report. Put comments that explain the code or the approach as necessary.
+                </li>
+                <li>
+                    Your code must be readable. Non-readable code will not be acceptable.
+                </li>
+                <li>
+                    Your code must be compilable. Non-compilable code will not be acceptable. Your code must have comments describing how it should be compiled.
+                </li>
+                <li>Code that does not compile will not be graded, not even partially.</li>
+                <li>Use of optimsation compiler flags is NOT allowed.</li>
+                <li>Your program should NOT print any messages to any interface. If these are present for debugging purposes, it is expected that the debug option will be turned off before submission.</li>
+            </ul>
+            <h2 id="evaluation">
+                Evaluation
+            </h2>
+            <p>
+            Searching - 5 marks (1 marks each)
+            </p>
+            <ul>
+                <li>
+                    What algorithm did you choose? Why did you choose it?
+                </li>
+                <li>
+                    How did you parallelise it? Or how did you prove it was not parallelisable?
+                </li>
+                <li>
+                    Parallel code - data access, data constraints
+                </li>
+                <li>
+                    Parallel code - effectiveness of parallel constructs
+                </li>
+                <li>
+                    Testing and performance metrics
+                </li>
+            </ul>
+            <p>
+            Sorting - 15 marks
+            </p>
+            <ul>
+                <li>
+                    What algorithm did you choose? Why did you choose it? (1 mark)
+                </li>
+                <li>
+                    How did you parallelise it? Or how did you prove it was not parallelisable? (3 marks)
+                </li>
+                <li>
+                    Did you break the algorithm down into blocks that were parallelisable and not parallelisable? (2 marks)
+                </li>
+                <li>
+                    Did you consider where parallel constructs might need to be combined/joined/waited? (2 marks)
+                </li>
+                <li>
+                    Did you effectively share variables amongst threads/processes? (2 marks)
+                </li>
+                <li>
+                    Did you take care to avoid the problems of accessing same data in multiple parallel constructs? (2 marks)
+                </li>
+                <li>
+                    Testing and performance metrics (3 marks)
+                </li>
+            </ul>
+            <p>
+            Areas of concern where marks may be deducted:
+            </p>
+            <ul>
+                <li>
+                    Your report does not contain correct explanations.
+                </li>
+                <li>
+                    You did not repeat tests with multiple parameters.
+                </li>
+                <li>
+                    You did not optimise for data access in loops, etc.
+                </li>
+                <li>
+                    You did not document the approach
+                </li>
+                <li>
+                    You did not take your environment (OS, CPU cores, cache) into account
+                </li>
+            </ul>
+            <h3 id="dos">
+                do's
+            </h3>
+            <ul>
+                <li>use OpenMP, and optionally you can also use MPI / Intel_SSE</li>
+                <li>use C - no other programming languages; C++ is okay if using only standard libraries</li>
+                <li>
+                    use gdb / valgrind / purify (for debugging)
+                </li>
+                <li>
+                    look up implementations online (with citations)
+                </li>
+                <li>
+                    discuss problems, discuss approaches
+                </li>
+            </ul>
+            <h3 id="donts">
+                dont's
+            </h3>
+            <ul>
+                <li>
+                    <strong>
+                        don’t cheat
+                    </strong>
+                    - suspicious similarity in code, metrics, evaluations, results, and reports will be a cause for YOUR concern (for marks)
+                </li>
+                <li>
+                    use any external library except those provided by default in a POSIX environment such as Linux or UNIX (sub)systems
+                </li>
+                <li>
+                    select
+                    <em>
+                        exotic
+                    </em>
+                    algorithms
+                </li>
+                <li>
+                    copy code verbatim (you must learn and adapt it on your own)
+                </li>
+                <li>
+                    use code / approaches / explanations without citations
+                </li>
+                <li>
+                    copy code / approaches / reports from each other
+                </li>
+                <li>
+                    <code>
+                        post the assignment on stackoverflow
+                    </code>
+                    or share it otherwise
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCHTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>CS3014 - Concurrent Systems I</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+    </head>
+    <body>
+<div>
+<h1 class="f1">Concurrent Systems I</h1>
+<p>CS3014 conducted by Harshvardhan J. Pandit</p>
+<p>Lectures take place every Tuesday 16:00-17:00 and Thursday 14:00-16:00 in LB.04</p>
+<p>Please refer to required reading and reference materials from <a href="https://www.scss.tcd.ie/David.Gregg/cs3014/">David Gregg's module website</a>.</p>
+<p>You can provide suggestions, feedback, queries via <a href="https://goo.gl/forms/9a0v5msA7DKBhO0A2">this form</a>.</p>
+<ul class="list">
+    <li><a href="https://www.scss.tcd.ie/modules/?m=CS3014">Module Descriptor</a></li>
+    <li><a href="#slides">Lecture Contents</a></li>
+    <li><a href="assignment.html">Assignment</a></li>
+    <li><a href="exam.html">Exam Preparation</a></li>
+    <li><a href="#resources">Resources</a></li>
+</ul>
+<div id="slides">
+    <h2>Lectures</h2>
+    <ul>
+        <li>
+            <h3>Introduction to concurrency and parallelism in computing</h3>
+            <p>lecture#1 23JAN 16:00-17:00 LB.04</p>
+            <ul>
+                <li>Background</li>
+                <li>Why write parallel programs?</li>
+                <li>Processor vs Memory performance</li>
+                <li>Memory Hierarchy</li>
+                <li>Cache</li>
+                <li>Efficient access to data</li>
+                <li>Efficient programming</li>
+                <li>Slides: <a href="slides/l1-background.pdf">Background</a>, <a href="https://www.scss.tcd.ie/David.Gregg/cs3014/notes/lecture2-efficiency.pdf">Efficiency</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3>OpenMP - MultiProcessing Library/Framework</h3>
+            <p>lecture#2,#3 25JAN 14:00-16:00 LB.04</p>
+            <ul>
+                <li>OpenMP</li>
+                <li>Shared Memory Model</li>
+                <li>Parallelism</li>
+                <li>Thread Model</li>
+                <li>Parallel constructs - for, section, task</li>
+                <li>Parallel constructs - atomic, critical</li>
+                <li>Variable scoping - shared and private</li>
+                <li>Reductions</li>
+                <li>Scheduling, Sharing</li>
+                <li>Vector SIMD</li>
+                <li>Slides: <a href="slides/l2-openmp.pdf">OpenMP</a></li>
+                <li>Codes:
+                    <a href="codes/lecture2/example1_threads.c">threads.c</a>, 
+                    <a href="codes/lecture2/example2_for.c">for.c</a>, 
+                    <a href="codes/lecture2/example3_section.c">section.c</a>, 
+                    <a href="codes/lecture2/example4_task.c">task.c</a>, 
+                    <a href="codes/lecture2/example5_mixin.c">mixin.c</a>, 
+                    <a href="codes/lecture2/example6_reduction_1.c">reduction_1.c</a>, 
+                    <a href="codes/lecture2/example6_reduction_2.c">reduction_2.c</a>, 
+                    <a href="codes/lecture2/example6_reduction_3.c">reduction_3.c</a>, 
+                    <a href="codes/lecture2/example7_scheduling.c">scheduling.c</a>, 
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>More OpenMP & Flynn's Taxonomy</h3>
+            <p>lecture#4 30JAN 16:00-17:00 LB.04</p>
+            <ul>
+                <li>OpenMP - barrier</li>
+                <li>OpenMP - locks</li>
+                <li>OpenMP - collapse</li>
+                <li>OpenMP - Orphaning</li>
+                <li>Slides: <a href="slides/l3-openmp.pdf">OpenMP</a></li>
+                <li>Codes: <a href="codes/lecture4/collapse.c">collapse.c</a></li>
+                <li>Flynn's Taxonomy</li>
+                <li>SISD, SIMD, SIMD, MIMD, SPMD, MPMD</li>
+                <li>Slides: <a href="slides/l4-flynn.pdf">Flynn's Taxonomy</a></li>
+                <li>Discussion of questions and usecases for Assignment</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Parallel Architectures</h3>
+            <p>lecture#5,#6 01FEB 14:00-16:00 LB.04</p>
+            <ul>
+                <li>Memory Access - UMA / NUMA, hUMA</li>
+                <li>Moore's Law</li>
+                <li>Symmetric / Asymmetric Processing</li>
+                <li>Variable SMP</li>
+                <li>big.LITTLE architecture</li>
+                <li>Instruction Level Parallelism</li>
+                <li>Pipeline Branching</li>
+                <li>Branch Prediction</li>
+                <li>Slides: <a href="slides/l5-parallel-architectures.pdf">l5-parallel-architectures</a></li>
+                <li>Superscalar Architecture</li>
+                <li>Slides: <a href="slides/l5-superscalar.pdf">l5-superscalar.pdf</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3>ISA & Parallelism Levels</h3>
+            <p>lecture #7 06FEB 16:00-17:00 LB.04</p>
+            <ul>
+                <li>Out of order execution</li>
+                <li>CISC</li>
+                <li>RISC</li>
+                <li>EPIC</li>
+                <li>Very Long Instruction Word (VLIW)</li>
+                <li>Levels of Parallelism - thread, task, data, memory, software</li>
+                <li>MPP - Massively Parallel Processor</li>
+                <li>Grid Computing</li>
+                <li>GPU and GPGPU</li>
+                <li>Vector Processor</li>
+                <li>Laws - Moore, Gustafson, Amdahl</li>
+                <li>Parallel Programming Languages</li>
+                <li>Slides: <a href="slides/l7-isa.pdf">Instruction Set Architectures</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3>Vector Architectures & Intel SSE</h3>
+            <p>lecture #8,#9 08FEB 14:00-16:00 LB.04</p>
+            <ul>
+                <li>Vector Programming Model</li>
+                <li>Vector Instructions</li>
+                <li>Multimedia extensions vs Vectors</li>
+                <li>Vectors === Supercomputers</li>
+                <li>Vector Chaining</li>
+                <li>Vector ILP</li>
+                <li>Vector Scatter/Gather</li>
+                <li>Vector Reductions</li>
+                <li>Slides <a href="slides/l9-vector.pdf">Vector Architecture</a></li>
+                <li>Intel MMX</li>
+                <li>Intel SSE</li>
+                <li>Intrinsics</li>
+                <li>SSE data types</li>
+                <li>SSE instructions - Load/Store, Arithmetic</li>
+                <li>SSE usage - code example</li>
+                <li>AVX intro and code example</li>
+                <li>Math functions using Newton-Rhapson reciprocal example</li>
+                <li>SSE instructions - bitwise, comparison, masking, max/min</li>
+                <li>Data reordering</li>
+                <li>Previous years assignment: Mandelbrot</li>
+                <li>Slide: <a href="https://www.scss.tcd.ie/David.Gregg/cs3014/notes/lecture16-sse1.pdf">Intel SSE - I</a>, <a href="https://www.scss.tcd.ie/David.Gregg/cs3014/notes/lecture17-sse2.pdf">Intel SSE - II</a>, <a href="https://www.scss.tcd.ie/David.Gregg/cs3014/notes/lecture18-mandelbrot.pdf">Mandelbrot</a></li>
+                <li>Codes: <a href="codes/lecture9/sse_intro.c">Intel SSE</a>, <a href="codes/lecture9/avx_intro.c">Intel AVX</a>, <a href="codes/lecture9/mandelbrot.c">Mandelbrot</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3>Multithreading</h3>
+            <p>lecture #10 13FEB 16:00-17:00 LB.04</p>
+            <ul>
+                <li>Threads as a concept</li>
+                <li>Thread Level Parallelism (TLP)</li>
+                <li>Superthreading</li>
+                <li>Simultaneous Multithreading (SMT)</li>
+                <li>Hypterthreading</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Multi-threading, Chip Multiprocessing, MPI</h3>
+            <p>lecture #11,#12 15FEB 14:00-16:00 LB.04</p>
+            <ul>
+                <li>Google's Architecture for Parallel Grids</li>
+                <li>Chip Multiprocessing</li>
+                <li>Power 5</li>
+                <li>Sun Niagara</li>
+                <li>Programming Models</li>
+                <li>Atomicity</li>
+                <li>Shared Memory</li>
+                <li>Message Passing</li>
+                <li>MPI</li>
+                <li>Slides: <a href="slides/l11-multithreading.pdf">Multithreading</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3>Modern GPUs</h3>
+            <p>lecture #13 20FEB 16:00-17:00 LB.04</p>
+            <ul>
+                <li>What is a GPU?</li>
+                <li>History of GPU</li>
+                <li>GPGPU Programming Model</li>
+                <li>SIMT Execution Model</li>
+                <li>GPU memory address space</li>
+                <li>Shared Memory Conflicts</li>
+                <li>GPU Instruction Set Architecture (ISA)</li>
+                <li>GPU Microarchitecture</li>
+                <li>Slides: <a href="slides/l13-gpu-architectures.pdf">GPU</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3>Let's Parallelise Algorithms</h3>
+            <p>lecture #14,#15 22FEB 14:00-16:00 LB.04</p>
+            <ul>
+                <li><a href="https://rosettacode.org/wiki/Substitution_Cipher">Substitution Cipher</a></li>
+                <li><a href="https://rosettacode.org/wiki/Longest_common_subsequence">Longest Common Subsequence</a></li>
+                <li><a href="https://rosettacode.org/wiki/Ackermann_function">Ackerman Function</a></li>
+                <li><a href="https://rosettacode.org/wiki/Tic-tac-toe">Tic-Tac-Toe</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Depth-first_search">Depth first search</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3>SIMD / Vectors for Multimedia</h3>
+            <p>lecture #16 06MAR 16:00-17:00 LB.04</p>
+            <ul>
+                <li>Multimedia Processing</li>
+                <li>Mediaprocessing</li>
+                <li>SIMD extensions</li>
+                <li>Vector Processors</li>
+                <li>Vector programming</li>
+                <li>Slides: <a href="slides/l16-multimedia.pdf">Multimedia</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3>Lab Session</h3>
+            <p>labs #1 08MAR 14:00-16:00 ICT Hut 2</p>
+        </li>
+        <li>
+            <h3>Scheduling</h3>
+            <p>lecture #19 13MAR 16:00-17:00 LB.04</p>
+            <ul>
+                <li>Dynamic Scheduling</li>
+                <li>Out of order pipelines</li>
+                <li>Out of order executions</li>
+                <li>Dependencies</li>
+                <li>Register Renaming</li>
+                <li>Dynamic Scheduling</li>
+                <li>Slides: <a href="slides/l19-scheduling.pdf">Scheduling</a></li>
+            </ul>
+        </li>
+        </li>
+        <li>
+            <h3>Lab Session</h3>
+            <p>labs #2 15MAR 14:00-16:00 ICT Hut 2</p>
+        </li>
+        <li>
+            <h3>Asynchronous Model of Concurrency</h3>
+            <p>lecture #22 20MAR 16:00-17:00 LB.04</p>
+            <ul>
+                <li>concurrency vs parallelism</li>
+                <li>virtual threads</li>
+                <li>coroutines</li>
+                <li>generators</li>
+                <li>asynchronous model</li>
+                <li>Slides: <a href="slides/l22-asynchronous.pdf">Asynchronous</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3>Assignment Evaluations and Discussion</h3>
+            <p>lecture #23,#24 22MAR 14:00-16:00 ICT Huts</p>
+        </li>
+        <li>
+            <h3>Revision</h3>
+            <p>lecture #25 27MAR 16:00-17:00 LB.04</p>
+            <p>ILP, architectures</p>
+        </li>
+        <li>
+            <h3>Revision</h3>
+            <p>lecture #26,#27 29MAR 14:00-16:00 LB.04</p>
+            <p>scheduling, multithreading, out-of-order execution, asynchronous model</p>
+        </li>
+        <li>
+            <h3>Concurency for Problem Solving</h3>
+            <p>lecture #28 03APR 16:00-17:00 LB.04</p>
+        </li>
+        <li>
+            <h3>Interesting Questions from Previous Examinations</h3>
+            <p>lecture #29,#30 05APR 14:00-16:00 LB.04</p>
+            <p>Exams from 2010 to 2017</p>
+        </li>
+    </ul>
+</div>
+<div id="assignment">
+    <h2 class="f2">Assignment</h2>
+    <p>The assignment is <i>simple</i>.</p>
+    <p>Implement 1 searching algorithm and 1 sorting algorithm in non-parallel and parallel execution formats, and compare them.</p>
+    <p>Write a report on your findings.</p>
+    <p>Submission date: `FRIDAY 23:59 16 March 2018 UTC`.</p>
+    <p>How to submit: use blackboard, upload as many times as you want</p>
+    <p><a href="assignment.html">read more...</a></p>
+</div>
+<div id="exam-prep">
+    <h2 class="f2">Exam Preparation</h2>
+    <a href="exam.html">see notes on exam prep</a>
+</div>
+<div id="resources">
+    <h2 class="f2">Resources</h2>
+    <p><a href="https://www.scss.tcd.ie/David.Gregg/cs3014/">Course website taught by David Gregg</a></p>
+    <p><a href="https://www.scss.tcd.ie/David.Gregg/cs3014/labs/lab1">Last year's assignment/lab</a></p>
+    <p><a href="http://www.openmp.org/resources/tutorials-articles/">OpenMP tutorials</a></p>
+</div>
+</div>
+    </body>
+</html>

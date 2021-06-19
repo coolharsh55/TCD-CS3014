@@ -1,0 +1,53 @@
+<!DOCHTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>CS3014 - Concurrent Systems I</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+    </head>
+    <body>
+
+        <h1>notes on exam prep</h1>
+        <p><b>Extra material in lectures:</b> The lectures contained a lot of examples that were presented only for demonstrative and explanatory purposes. They are not required to be learnt or revised from the point of view of the examinations.</p>
+        <p><b>Learning outcomes: </b> Focus on the module learning outcomes as guidelines for what topics need focus.</p>
+        <h2>Synopsis of Topics</h2>
+        <p>The module content (see module descriptor) lists topics that we have covered in class. Additionally, there are a few other topics that are also important.</p>
+        <ul>
+            <li>Roadblocks in hardware development which led to the development of Instruction Level Parallelism. This involves power consumption, memory bandwidth, efficiency of speed.
+                The limitation of ILP and single-core architectures gave way to multi-core processors. You need to be aware of the hardware components such as different types of memory, their use, limitations, processors, etc.</li>
+            <li>Flynn's Taxonomy - very important classification for hardware-based architectures. Modern architectures, however, are a mix of many of these. It is important to understand the advantages and disadvantages of each category in Flyyn's taxonomy, and why they are needed (for specific tasks).</li>
+            <li>Architectures: scalar/superscalar, vector, VLIW</li>
+            <li>MultiThreading: SMT / Hyperthreading ; Threads & processing cores ; Threading in GPU</li>
+            <li>Instruction Set Architectures: VLIW, Multimedia, SSE/MMX</li>
+            <li>Optimisation: scheduling, out-of-order executions</li>
+            <li>Asynchronous Programming Model</li>
+            <li>Parallel programming with OpenMP</li>
+        </ul>
+        <h2>Answering Questions</h2>
+        <ul>
+            <li>The structure and distribution of questions for the examination is much similar to that of the previous year (and those before).</li>
+            <li>There will be 3 questions of 50 marks each, of which 2 need to be attempted.</li>
+            <li>The previous email has already listed the important topics for the module</li>
+            <li>If there are any questions that require writing code in the exam-
+                <ul>
+                    <li>    writing syntactically correct code would be good, but is not a necessity i.e. missing a few semicolons or brackets is OK as long as the general code is well laid out.</li>
+                    <li>    do not write obfuscated code</li>
+                    <li>    do not introduce extra features (and bugs!) that are not part of the question</li>
+                    <li>    do not use external libraries ; standard (POSIX) libraries are okay to use</li>
+                    <li>    remember that you have been programming for at least three years now - use understandable variable names, programming styles, etc.</li>
+                </ul>
+            </li>
+            <li>For questions that require describing your code or approaches towards the code-
+                <ul>
+                    <li>    do not state the obvious e.g. you used #pragma omp for because there was a for loop; instead, you used it to parallelise a set of repeating statements (which happened to be in a for loop)</li>
+                    <li>    state the (sometimes hidden) assumptions: did something depend on something else? was your approach safe because the data is never written? State this.</li>
+                    <li>    describe why you chose a particular construct e.g. why did you chose to use _mm_load_ps instead of _mm_loadu_ps or for openMP section vs task</li>
+                    <li>    describe why your approach is good / performance / safe</li>
+                </ul>
+            </li>
+            <li>I'm not encouraging writing essay-style answers. If possible, be concise and to the point.</li>
+            <li>remember: even if you provide the correct answer - if you don't have evidence / facts / justifcations to back it up, you will probably lose some marks.</li>
+        </ul>
+    </body>
+</html>
